@@ -1,39 +1,42 @@
-# dynamic-form
+# 可视化动态表单
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+基于 `Vue3` 和 `Element Plus`，通过可视化操作生成表单，在需要用到的地方传入该数据即可生成表单
 
-#### 软件架构
-软件架构说明
+由于市面上已经有很多同类型项目了，此项目仅为个人练手，满足基本使用，更多功能将视情况增加
 
+# 安装
 
-#### 安装教程
+由于暂未发布，因此采用本地安装
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```shell
+npm install ./dynamic-form
+```
 
-#### 使用说明
+# 使用
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+在入口文件引入
 
-#### 参与贡献
+```js
+import DynamicForm from 'dynamic-form';
+import 'dynamic-form/style.css';
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+createApp(App).use(DynamicForm).mount('#app');
+```
 
+在 `vue` 文件使用
 
-#### 特技
+设计模式，请给父元素定义一个高度
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+```html
+<dynamic-form></dynamic-form>
+```
+
+渲染模式，传入由设计模式生成的数据即可
+
+```html
+<dynamic-form :data="data"></dynamic-form>
+```
+
+# TypeScript
+
+暂未生成声明文件，因此 `TypeScript` 项目需要手动注释一下编辑器的提示，或者自行定义一个类型
